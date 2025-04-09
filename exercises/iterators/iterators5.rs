@@ -11,7 +11,6 @@
 // Execute `rustlings hint iterators5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 use std::collections::HashMap;
 
@@ -56,7 +55,11 @@ fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Pr
     // collection = [{ "variables1": Complete, "from_str": None, ... },
     //     { "variables2": Complete, ... }, ... ]
     // todo!();
-
+    let mut count = 0;
+    for map in collection.iter() {
+        count += count_iterator(map, value);
+    }
+    count
 }
 
 #[cfg(test)]
